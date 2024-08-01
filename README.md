@@ -1,3 +1,6 @@
+# blogapp_react-drf
+This project is designed as the front-end of the blogApp_DRF project.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
