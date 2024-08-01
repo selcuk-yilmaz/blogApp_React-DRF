@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 // import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from 'react-router-dom';
-import Eagle from "../../assets/kartal_transparent.png"
+import Eagle from "../../assets/armaGenCode.ico"
 import { AuthContextProv } from '../../context/AuthContext';
 
 
@@ -47,7 +47,7 @@ const Navbar = () => {
     };
 
     return (
-        <AppBar position="static" color='warning'>
+        <AppBar position="static" color='secondary'>
             <Container maxWidth="xxl">
                 <Toolbar disableGutters>
                     <img src={Eagle} alt="Eagle" width={30} sx={{ display: { xs: 'none', md: 'flex' }, marginRight: 5 }} />
@@ -68,7 +68,7 @@ const Navbar = () => {
                         }}
                     // onClick={() => navigate('/')}
                     >
-                        Eagle Blog
+                        Education Blog
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

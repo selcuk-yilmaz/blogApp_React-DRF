@@ -16,7 +16,8 @@ const AuthContext = ({ children }) => {
     // const createUser = async (username, email, firstName, lastName, profile_pic, biography, password, password1) => {
     const createUser = async (userInfo, navigate) => {
         try {
-            const res = await axios.post(`${url}auth/register/`, userInfo)
+            // console.log(userInfo)
+            const res = await axios.post(`${url}/users/auth/register/`, userInfo)
             if (res.data.token) {
                 setMyToken(res.data.token)
                 const userData = { ...res.data, token: '' }
@@ -34,7 +35,7 @@ const AuthContext = ({ children }) => {
 
     const signIn = async (userLoginInfo, navigate) => {
         try {
-            const res = await axios.post(`${url}auth/login/`, userLoginInfo)
+            const res = await axios.post(`${url}/users/auth/login/`, userLoginInfo)
             if (res.data.key) {
                 setMyToken(res.data.key)
                 setCurrentUser(res.data.user)
@@ -52,7 +53,7 @@ const AuthContext = ({ children }) => {
     const updateUser = async (updateInfo, id, navigate) => {
         const config = {
             method: 'put',
-            url: `${url}auth/update-profile/${id}`,
+            url: `${url}/users/auth/update-profile/${id}`,
             headers: {
                 'Authorization': `Token ${myToken}`,
                 'Content-Type': 'application/json',
@@ -75,7 +76,7 @@ const AuthContext = ({ children }) => {
         try {
             const config = {
                 method: 'post',
-                url: `${url}auth/logout/`,
+                url: `${url}/users/auth/logout/`,
                 headers: {
                     'Authorization': `Token ${myToken}`,
                 }
