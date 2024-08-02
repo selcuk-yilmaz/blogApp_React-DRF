@@ -13,14 +13,14 @@ import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutline
 import VisibilityTwoToneIcon from '@mui/icons-material/VisibilityTwoTone';
 import { useNavigate } from 'react-router';
 import { BlogDataContext } from '../../context/BlogContext';
-// import { AuthContextProv } from '../../context/AuthContext';
+import { AuthContextProv } from '../../context/AuthContext';
 
 
 
 export default function BlogCard({ blogData }) {
     const navigate = useNavigate();
 
-    // const { currentUser } = React.useContext(AuthContextProv)
+    const { currentUser } = React.useContext(AuthContextProv)
 
 
     const handleClick = (slug) => {
@@ -62,7 +62,7 @@ export default function BlogCard({ blogData }) {
                 title={blogData.author.toUpperCase()}
                 subheader={(new Date(blogData.published_date).toUTCString()).slice(0, 16)}
             />
-            {/* <CardActions disableSpacing sx={{ position: "absolute", bottom: "2px", left: "5px" }}>
+            <CardActions disableSpacing sx={{ position: "absolute", bottom: "2px", left: "5px" }}>
                 <IconButton aria-label="like" sx={{ color: (blogData.post_like?.filter((like) => like.user_id === currentUser.id)[0]?.user_id) && "red" }}>
                     <FavoriteIcon />
                     <Typography sx={{ ml: 1 }} >
@@ -81,7 +81,7 @@ export default function BlogCard({ blogData }) {
                         {blogData.comment_count}
                     </Typography>
                 </IconButton>
-            </CardActions> */}
+            </CardActions>
         </Card>
     );
 }

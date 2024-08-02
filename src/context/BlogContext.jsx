@@ -176,7 +176,7 @@ const BlogContext = ({ children }) => {
         const token = window.atob(sessionStorage.getItem('token'));
         const config = {
             method: 'get',
-            url: `${url}blog/all-posts/`,
+            url: `${url}blog/all-own-posts/`,
             headers: {
                 'Authorization': `Token ${token}`,
                 'Cookie': 'csrftoken=hg8jtk9cKr6iaVG9AY6j7ynqx0s18Ulx; sessionid=crcnox2a76sf9d54b1bga52ksj7yxpwt'
